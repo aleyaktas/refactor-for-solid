@@ -1,19 +1,19 @@
 import { useHistory, useParams } from "react-router";
 import useFetch from "./useFetch";
+import {url} from './config'
+import { deleteFetch } from "./fetch";
+import Header from "./Header";
 
 const BlogDetails = () => {
   const { id } = useParams(); //from bloglist key = blog.id
   const { data: blogs, isPending, error } = useFetch(
-    "https://blogger-rolify-api.herokuapp.com/blogs/" + id
+    `${url}/${id}` 
   );
   const history = useHistory();
 
   const handleDelete = () => {
-    fetch("https://blogger-rolify-api.herokuapp.com/blogs/" + blogs.id, {
-      method: "DELETE",
-    }).then(() => {
-      history.push("/blogger-react-app/"); //push to home
-    });
+    deleteFetch(blogs.id);
+    history.push("/blogger-react-app/"); //push to home
   };
 
   return (
@@ -22,8 +22,7 @@ const BlogDetails = () => {
       {error && <div>{error}</div>}
       {blogs && (
         <article>
-          <h1>{blogs.title}</h1>
-          <p>Written By: {blogs.author}</p>
+          <Header title={blogs.title} text={`"Written by": ${blogs.author}`} />
           <div>{blogs.body}</div>
           <button onClick={handleDelete}>Delete</button>
         </article>

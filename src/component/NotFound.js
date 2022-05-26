@@ -1,8 +1,9 @@
+import Header from "./Header";
+
 const NotFound = () => {
   return (
     <div className="not-found">
-      <h1>404</h1>
-      <p>Not found or Page doesn't exist</p>
+      <Header title="404" text="Not found or Page doesn't exist" />
     </div>
   );
 };

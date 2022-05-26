@@ -1,9 +1,10 @@
 import BlogList from "./BlogList";
 import useFetch from "./useFetch";
+import {url} from './config'
 
 const Home = () => {
   const { error, isPending, data: blogs } = useFetch(
-    "https://blogger-rolify-api.herokuapp.com/blogs"
+    url
   );
 
   return (
@@ -11,7 +12,6 @@ const Home = () => {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {blogs && <BlogList blogs={blogs} />}
-      {/* blogs are beigng passed to bloglist using props */}
     </div>
   );
 };
