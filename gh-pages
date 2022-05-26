@@ -1,0 +1,23 @@
+
+> blogger@0.1.0 build D:\Documents\Web Development\Blogger React App\blogger
+> react-scripts build "build"
+
+Creating an optimized production build...
+Compiled successfully.
+
+File sizes after gzip:
+
+  49.77 KB        build\static\js\2.b315e483.chunk.js
+  1.5 KB          build\static\js\main.0be50bbb.chunk.js
+  1.22 KB (+9 B)  build\static\css\main.07e37961.chunk.css
+  780 B           build\static\js\runtime-main.86e7b011.js
+
+The project was built assuming it is hosted at /blogger-react-app/.
+You can control this with the homepage field in your package.json.
+
+The build folder is ready to be deployed.
+
+Find out more about deployment here:
+
+  https://cra.link/deployment
+
